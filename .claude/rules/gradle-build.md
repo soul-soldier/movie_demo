@@ -11,6 +11,9 @@ paths:
 - Add every library and plugin to `gradle/libs.versions.toml` with an exact version (no `+`, no ranges)
   and reference it as `libs.…`. Don't bump AGP, Kotlin or the Compose BOM unless asked. Kotlin compiler plugins
   (Compose, serialization) use the project's Kotlin version.
+- The project stays on AGP 8.13.2 with `compileSdk 36`. Pick library versions that support this; newer AndroidX
+  releases such as `core` 1.19+ or `lifecycle` 2.11+ require AGP 9.1 and `compileSdk 37`. If Gradle reports an AAR
+  metadata error, lower the library version instead of upgrading AGP.
 - Use KSP for Hilt and Room, not kapt.
 - All Ktor artifacts (`ktor-client-core`, `ktor-client-okhttp`, `ktor-client-content-negotiation`,
   `ktor-serialization-kotlinx-json`, `ktor-client-mock` for tests) share one version entry in the catalog.

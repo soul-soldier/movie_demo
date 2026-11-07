@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MovieDemo</string>
+    <string name="tab_search">Search</string>
+    <string name="tab_genres">Genres</string>
+    <string name="tab_people">People</string>
+    <string name="tab_providers">Providers</string>
 </resources>

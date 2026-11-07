@@ -1,0 +1,21 @@
+# Secrets – must never be committed (task requirement)
+secrets.properties
+local.properties
+
+# Gradle & build output
+.gradle/
+.kotlin/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Personal Claude Code files
+.claude/settings.local.json
+CLAUDE.local.md

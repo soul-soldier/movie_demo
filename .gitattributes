@@ -1,0 +1,4 @@
+# Shell scripts need LF line endings, otherwise bash fails after a Windows checkout
+*.sh text eol=lf
+gradlew text eol=lf
+*.bat text eol=crlf

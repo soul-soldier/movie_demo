@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "deny": [
+      "Read(**/secrets.properties)",
+      "Read(**/local.properties)",
+      "Edit(**/secrets.properties)",
+      "Edit(**/local.properties)"
+    ],
+    "ask": [
+      "Bash(git push *)"
+    ],
+    "allow": [
+      "Bash(./gradlew *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|Write|MultiEdit|NotebookEdit|Grep|Glob|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe",
+            "args": [
+              "-NoProfile",
+              "-NonInteractive",
+              "-ExecutionPolicy",
+              "Bypass",
+              "-File",
+              "${CLAUDE_PROJECT_DIR}/.github/hooks/scripts/block-local-properties.ps1"
+            ],
+            "timeout": 15,
+            "onFailure": "block"
+          }
+        ]
+      }
+    ]
+  }
+}

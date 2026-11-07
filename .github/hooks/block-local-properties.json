@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "powershell": "./.github/hooks/scripts/block-local-properties.ps1",
+        "bash": "bash ./.github/hooks/scripts/block-local-properties.sh",
+        "cwd": ".",
+        "timeoutSec": 5
+      }
+    ]
+  }
+}
